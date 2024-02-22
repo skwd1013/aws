@@ -55,8 +55,12 @@ jobs:
 
     - name: Push Docker image to Amazon ECR
       run: |
-        docker tag tricount:${{ github.sha }} ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+        docker build -t ${{ secrets.AWS_ECR_REPOSITORY }}:${{ github.sha }} .
+        docker tag ${{ secrets.AWS_ECR_REPOSITORY }}:${{ github.sha }} ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+        docker push ${{ secrets.AWS_ECR_REPOSITORY }}:${{ github.sha }}
         docker push ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+        # docker tag tricount:${{ github.sha }} ${{ secrets.AWS_ECR_REPOSITORY }}:latest
+        # docker push ${{ secrets.AWS_ECR_REPOSITORY }}:latest
 
     - name: Upload Docker image to S3
       run: |
