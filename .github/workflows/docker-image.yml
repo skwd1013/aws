@@ -71,7 +71,7 @@ jobs:
         # --deployment-group-name tricount `
         # --revision revisionType=S3,s3Location="{`"bucket`":`"skwd1013`",`"key`":`"tricount.tar`",`"bundleType`":`"tar`"}" `
         # --deployment-config-name CodeDeployDefault.OneAtATime
-        aws deploy create-deployment --application-name tricount --deployment-group-name tricount --revision revisionType=S3,s3Location="{""bucket"":""skwd1013"",""key"":""tricount.tar"",""bundleType"":""tar""}" --deployment-config-name CodeDeployDefault.OneAtATime
+        aws deploy create-deployment --application-name tricount --deployment-group-name tricount-deployment-group --revision revisionType=S3,s3Location="{""bucket"":""skwd1013"",""key"":""tricount.tar"",""bundleType"":""tar""}" --deployment-config-name CodeDeployDefault.OneAtATime
 
 
     
