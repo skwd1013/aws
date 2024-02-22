@@ -67,7 +67,7 @@ jobs:
 
     - name: Deploy to AWS CodeDeploy
       run: |
-        aws deploy create-deployment --application-name your-application-name \
-          --deployment-group-name your-deployment-group-name \
-          --revision revisionType=S3,bucket=your-bucket-name,key=path/to/tricount.tar,bundleType=tar \
+        aws deploy create-deployment --application-name tricount \
+          --deployment-group-name tricount \
+          --revision revisionType=S3,bucket=skwd1013,key=/tricount.tar,bundleType=tar \
           --deployment-config-name CodeDeployDefault.OneAtATime
